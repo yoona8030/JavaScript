@@ -1,0 +1,17 @@
+function printHello() {
+    console.log('Hello');
+}
+printHello();
+
+let globalMessage = 'global'; //global variable
+function printMessage() {
+    let message = 'hello';
+    console.log(message); // local variable
+    console.log(globalMessage);
+    let childMessage = 'hello';
+    function printAnother() {
+        console.log(message);    
+    }
+    console.log(childMessage);
+}
+printMessage();
