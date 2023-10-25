@@ -1,0 +1,118 @@
+'use strict';
+
+//Array
+// 1. declaration
+
+const arr1 = new Array();
+const arr2 = [1,2];
+
+// 2. Index position
+const fruits = ['apple', 'banana'];
+console.log_(fruits);
+console.log_(fruits.length);
+console(fruits[0]);
+console(fruits[1]);
+console(fruits[2]);
+console(fruits[fruits.length -1]);
+
+
+console.clear();
+//3. looping over an array
+//print all fruits
+// a.for
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
+//b. for of 
+for (let fruit of fruits) {
+    console.log(fruit);
+}
+
+//c. forEach
+fruits.forEach(function(fruit, index, array) {
+    console.log(fruit, index);
+});
+
+// c. forEach
+fruits.forEach((fruit) => console.log(fruit));
+
+// 4. Addtion, deletion, copy
+//push: add an item to the end
+fruits.push('딸기', '복숭아');
+console.log(fruits);
+
+//pop: remove an item from the end
+fruits.pop();
+fruits.pop();
+console.log(fruits);
+
+//add an item to the benigging
+// remove an item to the benigging
+fruits.unshift('딸기', '레몬');
+console.log(fruits);
+
+//shift: remove an item from the benigging
+fruits.shift();
+fruits.shift();
+console.log(fruits);
+
+//note!! shift, unshift are slower than pop, push
+
+// 5. seaching
+// find the index
+
+console.clear();
+console.log(fruits);
+console.log(fruits.indexOf('사과'));
+console.log(fruits.indexOf('수박'));
+console.log(fruits.includes('수박'));
+console.log(fruits.includes('코코넛'));
+console.log(fruits.indexOf('코코넛'));
+
+
+//Q1. make a string out of an array
+{
+    const fruits= ['apple', 'banana', 'orange'];
+    const result = fruits.join(',');
+    console.log(result);
+}
+
+// Q2. make an array out of a string
+{
+    const fruits = '사과, 키위, 바나나, 체리';
+    const result = fruits.split();
+    console.log(result);
+}
+
+// Q3. make this array look like this: [5,4,3,2,1]
+{ const array = [1,2,3,4,5];
+const result = array.reverse();
+console.log(result)
+}
+
+// Q4. make new array without the first two elements
+{
+    const array = [1,2,3,4,5];
+    const result = array.slice(2,5);
+    console.log(result);
+    console.log(array);
+}
+
+class Student {
+    constructor(name, age, enrolled, score) {
+        this.name = name;
+        this age = age;
+        this.enrolled = enrolled;
+        this.score = score;
+    }
+}
+const Student = [
+    new Student('A', 29, true, 45)
+    new Student('B', 28, false, 80)
+    new Student('C', 30, true, 90)
+    new Student('D', 40, false, 66)
+    new Student('E', 18, true, 88)
+];
+
+// Q5. find a student with the score 90
+
