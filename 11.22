@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>입력란_maxlength</title>
+        <script>
+            window.onload = function () {
+                var input_1 = document.querySelectorAll('input')[0];
+                var input_2 = document.querySelectorAll('input')[1];
+
+                input_1.onkeydown = function () {
+                    if (6 <= input_1.value.length) {
+                        input_2.focus();
+                    }
+                };
+
+                input_2.onkeydown = function (event) {
+                    var event = event || window.event;
+                    if (event.keyCode == 8 && input_2.valur.length == 0) {
+                        input_1.focus();
+                    }
+                };
+            };
+        </script>
+    </head>
+    <body>
+        <input type="text" maxlength="6">
+        <span>-</span>
+        <input type="text" maxlength="7">
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frame Animation</title>
+    <script>
+        window.onload = function () {
+            var count = 0;
+            var image = document.getElementById('image');
+            var frames = ['run_1.jpg','run_2.jpg','run_3.jpg','run_4.jpg'];
+
+            setInterval(function () {
+                image.src = frames[count % frames.length];
+                count = count + 1;
+            }, 1000 / 4);
+        };
+    </script>
+</head>
+<body>
+    <img id="image">
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Object</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            for (var i = 1; i <= 10; i++) {
+                $('<h1>Create Document Object + ' + i + '</h1>').css({
+                    backgroundColor: 'green',
+                    color: 'white'
+                }).appendTo('body');
+            }
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Infinity Scroll</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"> </script>
+    <script>
+        $(document).ready(function () {
+            var appendDocument = function () {
+                for (var i = 0; i < 20; i++) {
+                    $('<h1>Infinity Scroll</h1>').appendTo('body');
+                }
+            };
+            appendDocument();
+
+            $(window).scroll(function () {
+                var scrollHeight = $(window).scrollTop() + $(window).height();
+                var documentHeight = $(document).height();
+                if (scrollHeight == documentHeight) {
+                    appendDocument();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>
